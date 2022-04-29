@@ -4,9 +4,17 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch("setProducts");
+  },
+};
+</script>
 
 <style>
 #app {
@@ -15,6 +23,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #nav {
