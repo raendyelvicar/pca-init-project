@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <div class="gutter-example space-align-container">
-      <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
+      <VueSlickCarousel
+        :arrows="true"
+        :dots="true"
+        v-bind="settings"
+        v-if="products"
+      >
         <div
           class="gutter-box"
           v-for="item in products"
@@ -59,7 +64,6 @@ export default {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 3,
-        touchThreshold: 5,
       },
       modal1Visible: false,
       modal2Visible: false,
@@ -79,10 +83,6 @@ export default {
 .slick-prev,
 .slick-next {
   z-index: 1;
-}
-
-.slick-slide {
-  padding: 0;
 }
 
 .slick-next:before,
